@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    
+</head>
+<body>
+    <form id="exampleFrm" action="#">
+    <table id="example" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Position</th>
+                <th>Office</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Tiger Nixon</td>
+                <td><input type="text" id="row-1-age" name="age[0]" value=""></td>
+                <td><input type="text" id="row-1-position" name="position" value=""></td>
+                <td><select size="1" id="row-1-office" name="office">
+                    <option value="Edinburgh" selected="selected">
+                        Edinburgh
+                    </option>
+                    <option value="London">
+                        London
+                    </option>
+                    <option value="New York">
+                        New York
+                    </option>
+                    <option value="San Francisco">
+                        San Francisco
+                    </option>
+                    <option value="Tokyo">
+                        Tokyo
+                    </option>
+                </select></td>
+            </tr>
+            <tr>
+                <td>Garrett Winters</td>
+                <td><input type="text" id="row-2-age" name="age[1]" value=""></td>
+                <td><input type="text" id="row-2-position" name="position" value=""></td>
+                <td><select size="1" id="row-2-office" name="office">
+                    <option value="Edinburgh">
+                        Edinburgh
+                    </option>
+                    <option value="London">
+                        London
+                    </option>
+                    <option value="New York">
+                        New York
+                    </option>
+                    <option value="San Francisco">
+                        San Francisco
+                    </option>
+                    <option value="Tokyo" selected="selected">
+                        Tokyo
+                    </option>
+                </select></td>
+            </tr>
+            <tr>
+                <td>Ashton Cox</td>
+                <td><input type="text" id="row-3-age" name="age[2]" value=""></td>
+                <td><input type="text" id="row-3-position" name="position" value=""></td>
+                <td><select size="1" id="row-3-office" name="office">
+                    <option value="Edinburgh">
+                        Edinburgh
+                    </option>
+                    <option value="London">
+                        London
+                    </option>
+                    <option value="New York">
+                        New York
+                    </option>
+                    <option value="San Francisco" selected="selected">
+                        San Francisco
+                    </option>
+                    <option value="Tokyo">
+                        Tokyo
+                    </option>
+                </select></td>
+            </tr>
+        </tbody>
+        </table>
+        <button id="submitBtn">Submit</button>
+    </form>   
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+        <script src="main.js"></script>
+</body>
+
+</html>

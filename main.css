@@ -1,0 +1,28 @@
+.arp-error-field {
+    border-bottom: 1px solid #db261d!important
+}
+
+.arp-error {
+    background: rgba(255,255,255,0.95);
+    border: 1px solid #fff;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 5px;
+    text-align: center;
+    width: 160px;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    z-index: 1;
+    -webkit-box-shadow: 1px 1px 1px #ccc;
+    -moz-box-shadow: 1px 1px 1px #ccc;
+    -ms-box-shadow: 1px 1px 1px #ccc;
+    -o-box-shadow: 1px 1px 1px #ccc;
+    box-shadow: 1px 1px 1px #ccc
+}
