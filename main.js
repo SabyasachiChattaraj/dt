@@ -3,11 +3,19 @@ $(document).ready(function() {
 
 
     $("td input,td select").change(function(){
-        $(this).closest("tr").children("td").each(function(index){
-            $(this).children().first().attr("data-rule-required","true");
-        });
+        var editor=$(this);
+		var val=$(this).val();
+		if(val.length>0){
+			addValidation(editor);
+		}
+		else{
+			removeValidation(editor);
+		}	
+		
     });
 
+	
+	
     $("#exampleFrm").validate({
         errorElement: "span",
         errorClass: "arp-error",
@@ -19,7 +27,7 @@ $(document).ready(function() {
             a.hide();
             a.remove()
         },
-        ignore: "",
+        ignore: ".arp-ignore-validation",
         submitHandler: function(form) {
             form.submit();
           }
@@ -46,3 +54,16 @@ $(document).ready(function() {
     }, "To year should be greater than From year");
     
 } );
+
+
+function addValidation(editor){
+	editor.closest("tr").children("td").each(function(index){
+		$(this).children().first().removeClass("arp-ignore-validation");
+	});
+}
+
+function removeValidation(editor){
+	editor.closest("tr").children("td").each(function(index){
+		$(this).children().first().addClass("arp-ignore-validation").removeClass("arp-error-field");
+	});
+}
