@@ -1,3 +1,4 @@
+var total_salary=0;
 $(document).ready(function() {
 
 
@@ -32,20 +33,14 @@ $(document).ready(function() {
             form.submit();
           }
     });
-    var table = $('#example').DataTable();
+    var table = $('#example').DataTable({ "pageLength": 2});
  
-    /*$('button').click( function() {
-        var data = table.$('input, select').serialize();
-        alert(
-            "The following data would have been submitted to the server: \n\n"+
-            data.substr( 0, 120 )+'...'
-        );
-        return false;
-    } );*/
+ 
 
     $("#submitBtn").click(function(e){
         e.preventDefault();
-        $("#exampleFrm").valid();
+        if($("#exampleFrm").valid())
+			calculate(table);
     });
 
    
@@ -67,3 +62,41 @@ function removeValidation(editor){
 		$(this).children().first().addClass("arp-ignore-validation").removeClass("arp-error-field");
 	});
 }
+
+function calculate(table) {
+        var data = table.$('input, select').serialize();
+        data=decodeURI(data);
+		
+		var totalIssues=0;
+		var totalVoids=0;
+		var issues=0;
+		var voids=0;
+		var currentType="";
+		$.each(data.split("&"),function(index){
+			 var counter=index%3;
+			 
+			 	var val=this.split("=")[1];
+				
+				if(counter==0){
+					currentType=val;
+					if(currentType=="Issue")
+						issues++;
+					else
+						voids++;
+				}
+				
+				if(counter==1){
+					if(currentType=="Issue")
+						totalIssues+=parseFloat(val);
+					else
+						totalVoids+=parseFloat(val);
+				
+				}
+				
+					
+			 	
+		});
+		alert(
+           "totalIssues=" + totalIssues +",issues="+issues+",totalVoids="+totalVoids+",voids="+voids
+        );
+    } 
