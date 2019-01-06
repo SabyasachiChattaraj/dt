@@ -35,6 +35,11 @@ $(document).ready(function() {
     });
     var table = $('#example').DataTable({ "pageLength": 2});
  
+	 $("#setDataBtn").click(function(e){
+        e.preventDefault();
+        
+			setData(table);
+    });
  
 
     $("#submitBtn").click(function(e){
@@ -93,10 +98,18 @@ function calculate(table) {
 				
 				}
 				
-					
-			 	
 		});
 		alert(
            "totalIssues=" + totalIssues +",issues="+issues+",totalVoids="+totalVoids+",voids="+voids
         );
     } 
+	
+function setData(table){
+	table.clear();
+	table.rows.add( [[ 'Garrett Winters', '<select size="1" id="row-2-office" name="office[1]" class="arp-ignore-validation" data-rule-required="true"><option value="" >Select</option><option value="Issue">Issue</option><option value="Void" selected="selected">Void</option></select>',
+       '<input type="text" id="row-2-age" name="age[1]" class="arp-ignore-validation" data-rule-required="true" value="20">',
+       '<input type="text" id="row-2-position" name="position[1]" class="arp-ignore-validation" data-rule-required="true" value="Manager">'
+     ]] )
+    .draw();
+}	
+	
